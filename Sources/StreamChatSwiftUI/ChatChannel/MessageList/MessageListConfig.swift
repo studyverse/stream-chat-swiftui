@@ -27,7 +27,9 @@ public struct MessageListConfig {
         showNewMessagesSeparator: Bool = true,
         handleTabBarVisibility: Bool = true,
         messageListAlignment: MessageListAlignment = .standard,
-        uniqueReactionsEnabled: Bool = false
+        uniqueReactionsEnabled: Bool = false,
+        localLinkDetectionEnabled: Bool = true,
+        isMessageEditedLabelEnabled: Bool = true
     ) {
         self.messageListType = messageListType
         self.typingIndicatorPlacement = typingIndicatorPlacement
@@ -48,6 +50,8 @@ public struct MessageListConfig {
         self.handleTabBarVisibility = handleTabBarVisibility
         self.messageListAlignment = messageListAlignment
         self.uniqueReactionsEnabled = uniqueReactionsEnabled
+        self.localLinkDetectionEnabled = localLinkDetectionEnabled
+        self.isMessageEditedLabelEnabled = isMessageEditedLabelEnabled
     }
 
     public let messageListType: MessageListType
@@ -69,6 +73,8 @@ public struct MessageListConfig {
     public let handleTabBarVisibility: Bool
     public let messageListAlignment: MessageListAlignment
     public let uniqueReactionsEnabled: Bool
+    public let localLinkDetectionEnabled: Bool
+    public let isMessageEditedLabelEnabled: Bool
 }
 
 /// Contains information about the message paddings.

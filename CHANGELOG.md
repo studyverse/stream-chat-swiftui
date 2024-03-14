@@ -5,6 +5,42 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 
 ### 🔄 Changed
 
+# [4.50.1](https://github.com/GetStream/stream-chat-swiftui/releases/tag/4.50.1)
+_March 14, 2024_
+
+### 🐞 Fixed
+- Message text color when using link detection
+
+# [4.50.0](https://github.com/GetStream/stream-chat-swiftui/releases/tag/4.50.0)
+_March 12, 2024_
+
+### ✅ Added
+- Link detection in the text views
+- Indicator when a message was edited
+
+# [4.49.0](https://github.com/GetStream/stream-chat-swiftui/releases/tag/4.49.0)
+_February 28, 2024_
+
+### ✅ Added
+- Config the audioRecorder that is used when sending async voice messages
+
+### 🔄 Changed
+- Author name display now depends on number of participants, not channel type
+
+### 🐞 Fixed
+- Voice recording messages now use the standard message modifier
+
+### 🔄 Changed
+
+# [4.48.0](https://github.com/GetStream/stream-chat-swiftui/releases/tag/4.48.0)
+_February 09, 2024_
+
+### ✅ Added
+- Factory method for customizing the search results view
+
+### 🔄 Changed
+- Updated StreamChat dependency
+
 # [4.47.1](https://github.com/GetStream/stream-chat-swiftui/releases/tag/4.47.1)
 _January 29, 2024_
 
