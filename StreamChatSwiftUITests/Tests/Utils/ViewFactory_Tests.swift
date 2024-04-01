@@ -99,11 +99,36 @@ class ViewFactory_Tests: StreamChatTestCase {
         // Then
         XCTAssert(view is MoreChannelActionsView)
     }
+    
+    func test_viewFactory_makeSearchResultsView() {
+        // Given
+        let viewFactory = DefaultViewFactory.shared
+        
+        // When
+        let view = viewFactory.makeSearchResultsView(
+            selectedChannel: .constant(nil),
+            searchResults: [],
+            loadingSearchResults: false,
+            onlineIndicatorShown: { _ in true },
+            channelNaming: { _ in "Test" },
+            imageLoader: { _ in UIImage(systemName: "person")! },
+            onSearchResultTap: { _ in },
+            onItemAppear: { _ in }
+        )
+        
+        // Then
+        XCTAssert(view is SearchResultsView<DefaultViewFactory>)
+    }
 
     func test_viewFactory_makeMessageAvatarView() {
         // Given
         let viewFactory = DefaultViewFactory.shared
-        let userInfo = UserDisplayInfo(id: .unique, name: .unique, imageURL: URL(string: "https://example.com"))
+        let userInfo = UserDisplayInfo(
+            id: .unique,
+            name: .unique,
+            imageURL: URL(string: "https://example.com"),
+            role: .user
+        )
 
         // When
         let view = viewFactory.makeMessageAvatarView(for: userInfo)
@@ -115,7 +140,12 @@ class ViewFactory_Tests: StreamChatTestCase {
     func test_viewFactory_makeQuotedMessageAvatarView() {
         // Given
         let viewFactory = DefaultViewFactory.shared
-        let userInfo = UserDisplayInfo(id: .unique, name: .unique, imageURL: URL(string: "https://example.com"))
+        let userInfo = UserDisplayInfo(
+            id: .unique,
+            name: .unique,
+            imageURL: URL(string: "https://example.com"),
+            role: .user
+        )
 
         // When
         let view = viewFactory.makeQuotedMessageAvatarView(
